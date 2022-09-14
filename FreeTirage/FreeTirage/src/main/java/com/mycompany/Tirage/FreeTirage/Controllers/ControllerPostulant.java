@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController // Identifier la classe comme un Controller;
+@CrossOrigin("*") // FrontEnd
 @RequestMapping("/postulant") // le nom du Path ou pour le Navigateur;
 @Data
 @AllArgsConstructor // Un constructeur avec tous les arguments pour l'injection de notre ServicePostulants;
@@ -48,7 +49,8 @@ public class ControllerPostulant {
 
     @PostMapping("listePostulant/{libelle}")
     @ResponseBody
-    public List<Postulant> list(@RequestParam("file") MultipartFile file, ListePostulant liste, String libelle){
+    public List<Postulant> list(@RequestParam("file") MultipartFile file, ListePostulant liste, String libelle) throws InterruptedException {
+
         List<Postulant> postulants = Excel.postulantsExcel(file);
 
         liste.setDate(new Date());
