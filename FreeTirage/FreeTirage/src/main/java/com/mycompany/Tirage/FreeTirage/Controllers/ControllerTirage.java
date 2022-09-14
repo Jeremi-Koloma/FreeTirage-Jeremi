@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController // Identifier la classe comme un Controller;
 @RequestMapping("/tirage") // le nom du Path ou pour le Navigateur;
 @Data
@@ -38,6 +39,9 @@ public class ControllerTirage {
         if (serviceTirage.trouverTirageParLibelle(tirage.getLibelle()) == null) {
             // on appel on méthode trouver liste par libelle;
         ListePostulant liste = serviceListPostutant.trouverListeParLibelle(libelle);
+
+        tirage.setListePostulant(liste);
+
             // on appel on méthode trouver idPostulant par liste ;
         List<Postulant> post = servicePostulant.TrouverIdPostList(liste.getIdListePostulant());
         // On appel la méthode qui va nous permettre de faire le tirage;

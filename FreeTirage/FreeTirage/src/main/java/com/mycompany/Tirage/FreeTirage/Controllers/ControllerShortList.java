@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController // Identifier la classe comme un Controller;
 @RequestMapping("/shortList") // le nom du Path ou pour le Navigateur;
 @Data
