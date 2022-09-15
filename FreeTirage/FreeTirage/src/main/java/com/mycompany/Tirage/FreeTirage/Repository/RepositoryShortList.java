@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 // Cette classe va étendre de l'interface JPA Repository avec avec ENTITY <ShortList, id>;
 public interface RepositoryShortList extends JpaRepository<ShortList, Long> {
@@ -17,6 +18,7 @@ public interface RepositoryShortList extends JpaRepository<ShortList, Long> {
 
     @Query(value = "SELECT * FROM shortlist,tirage WHERE tirage.id_tirage=shortlist.id_short_list and tirage.libelle=:libelle",nativeQuery = true)
     public Iterable<ShortList> lirePostulantTireparnom(String libelle);
-
+    @Query(value = "SELECT * FROM  shortlist WHERE shortlist.id_triage=1=:lib",nativeQuery = true)
+    public List<ShortList> lirePostulant(Long lib);
 
 }

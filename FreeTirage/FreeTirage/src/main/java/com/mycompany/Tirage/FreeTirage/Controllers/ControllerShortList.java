@@ -1,5 +1,6 @@
 package com.mycompany.Tirage.FreeTirage.Controllers;
 
+import com.mycompany.Tirage.FreeTirage.Modeles.Postulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.ShortList;
 import com.mycompany.Tirage.FreeTirage.Services.ServiceShortList;
 import lombok.AllArgsConstructor;
@@ -28,4 +29,10 @@ public class ControllerShortList {
     public String delete(@PathVariable Long idShortList){ // public String, nom methode, avec param(Id Entity)
         return serviceShortList.supprimer(idShortList);
     }
+
+    @GetMapping("/create/{n}") // Pour une requête de type (POST) // public ENTITY avec param (ENTITY entity)
+    public List<ShortList> create(@PathVariable long n){ // pour envoyé de donné de body dans l'Entity;
+        return serviceShortList.lireP(n);
+    }
+
 }

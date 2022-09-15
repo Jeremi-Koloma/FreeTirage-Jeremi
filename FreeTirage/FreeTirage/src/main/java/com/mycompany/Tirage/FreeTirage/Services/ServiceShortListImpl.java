@@ -46,5 +46,10 @@ public class ServiceShortListImpl implements ServiceShortList {
         return repositoryShortList.lirePostulantTireparnom(libelle);
     }
 
+    @Override
+    public List<ShortList> lireP(Long libelle) {
+        return repositoryShortList.lirePostulant(libelle);
+    }
+
 
 }

@@ -21,4 +21,6 @@ public interface ServiceShortList {
     int creer(long idShortList, String email,String nom, String prenom,String numero, long id_tirage);
 
     public Iterable <ShortList> lirePostulantTireparnom(String libelle);
+    public List <ShortList> lireP(Long libelle);
+
 }
