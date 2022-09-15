@@ -21,4 +21,5 @@ public interface ServiceListPostutant {
 
     // Une méthode permettant de trouver liste par libelle;
     ListePostulant trouverListeParLibelle(String libelle);
+    int bb();
 }

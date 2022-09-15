@@ -1,5 +1,6 @@
 package com.mycompany.Tirage.FreeTirage.Services;
 
+import com.mycompany.Tirage.FreeTirage.Modeles.ListePostulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Postulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Tirage;
 
@@ -16,4 +17,9 @@ public interface ServiceTirage {
 
     // une méthode qui permet de trouver tirage par libelle;
     Tirage trouverTirageParLibelle(String libelle);
+    Long vrai(Long fr);
+    Long  Faux(ListePostulant listePostulant);
+
+    List<Tirage> tout(Integer id);
+    int aa();
 }

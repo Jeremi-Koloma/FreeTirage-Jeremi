@@ -1,5 +1,6 @@
 package com.mycompany.Tirage.FreeTirage.Services;
 
+import com.mycompany.Tirage.FreeTirage.Modeles.ListePostulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Postulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Tirage;
 import com.mycompany.Tirage.FreeTirage.Repository.RepositoryTirage;
@@ -49,6 +50,26 @@ public class ServiceTirageImpl implements ServiceTirage {
     @Override
     public Tirage trouverTirageParLibelle(String libelle) {
         return repositoryTirage.findByLibelle(libelle);
+    }
+
+    @Override
+    public Long vrai(Long fr) {
+        return repositoryTirage.obd(fr);
+    }
+
+    @Override
+    public Long Faux(ListePostulant listePostulant) {
+        return Long.valueOf(repositoryTirage.findByListePostulant(listePostulant).size());
+    }
+
+    @Override
+    public List<Tirage> tout(Integer id) {
+        return repositoryTirage.ok(id);
+    }
+
+    @Override
+    public int aa() {
+        return repositoryTirage.ob();
     }
 
 

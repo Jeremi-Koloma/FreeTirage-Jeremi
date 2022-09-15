@@ -34,4 +34,8 @@ public class ControllerListPostulant {
     public String delete(@PathVariable Long idListePostulant){ // public String, nom methode, avec param(Id Entity)
         return serviceListPostutant.supprimer(idListePostulant);
     }
+    @GetMapping("/conter")
+    public int oh (){ // pour une requête de type (GET)
+        return serviceListPostutant.bb();
+    }
 }

@@ -3,6 +3,7 @@ package com.mycompany.Tirage.FreeTirage.Controllers;
 import com.mycompany.Tirage.FreeTirage.Modeles.ListePostulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Postulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.Tirage;
+import com.mycompany.Tirage.FreeTirage.Repository.RepositoryListPostulant;
 import com.mycompany.Tirage.FreeTirage.Services.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,8 @@ public class ControllerTirage {
     private final ServiceListPostutant serviceListPostutant;
     private final ServicePostulant servicePostulant;
     private final ServiceShortList serviceShortList;
+
+    private final RepositoryListPostulant repositoryListPostulant;
 
     // Controller pour faire le Tirage;
     @PostMapping(value = "/createTirage/{libelle}/{nbre}")
@@ -61,5 +64,19 @@ public class ControllerTirage {
             return "Ce tirage est déjà éffectuer !";
         }
 
+    }
+    @GetMapping("/reaf/{id}")
+    public List<Tirage> li(@PathVariable Integer id){ // pour une requête de type (GET)
+        return serviceTirage.tout(id);
+    }
+    @GetMapping("/vrai/{id}")
+    public Object li(@PathVariable Long id){ // pour une requête de type (GET)
+
+        ListePostulant listePostulant=repositoryListPostulant.findById(id).get();
+        return serviceTirage.Faux(listePostulant);
+    }
+    @GetMapping("/cont")
+    public int ov (){ // pour une requête de type (GET)
+        return serviceTirage.aa();
     }
 }

@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity // Definit la classe comme ENTITY;
 @Table(name = "LISTEPOSTULANT") // Donner un Nom à notre ENTITY dans la base de donnée;
@@ -21,4 +23,7 @@ public class ListePostulant {
 
     @Column (length = 100)
     private String libelle;
+
+    @OneToMany(mappedBy = "listePostulant")
+    List<Tirage> tirages=new ArrayList<>();
 }

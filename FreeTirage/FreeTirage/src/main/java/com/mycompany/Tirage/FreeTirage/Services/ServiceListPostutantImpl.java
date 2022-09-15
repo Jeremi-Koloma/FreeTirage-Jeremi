@@ -47,4 +47,9 @@ public class ServiceListPostutantImpl implements ServiceListPostutant {
     public ListePostulant trouverListeParLibelle(String libelle) {
         return repositoryListPostulant.findByLibelle(libelle);
     }
+
+    @Override
+    public int bb() {
+        return repositoryListPostulant.obdd();
+    }
 }
