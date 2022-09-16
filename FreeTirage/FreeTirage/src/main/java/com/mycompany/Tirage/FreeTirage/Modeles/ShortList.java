@@ -29,4 +29,7 @@ public class ShortList {
     @ManyToOne
     @JoinColumn(name = "idTriage")
     private Tirage tirage;
+
+    public static class Postulant {
+    }
 }

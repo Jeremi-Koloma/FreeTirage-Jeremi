@@ -1,5 +1,4 @@
 package com.mycompany.Tirage.FreeTirage.Controllers;
-
 import com.mycompany.Tirage.FreeTirage.Modeles.Postulant;
 import com.mycompany.Tirage.FreeTirage.Modeles.ShortList;
 import com.mycompany.Tirage.FreeTirage.Services.ServiceShortList;
