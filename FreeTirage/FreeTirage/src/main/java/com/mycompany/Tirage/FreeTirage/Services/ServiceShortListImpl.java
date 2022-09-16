@@ -52,8 +52,8 @@ public class ServiceShortListImpl implements ServiceShortList {
     }
 
     @Override
-    public List<Object> nbrePost(Long nbrPos) {
-        return repositoryShortList.nombrePost(nbrPos);
+    public List<Object> nbrePost() {
+        return repositoryShortList.nombrePost();
     }
 
 

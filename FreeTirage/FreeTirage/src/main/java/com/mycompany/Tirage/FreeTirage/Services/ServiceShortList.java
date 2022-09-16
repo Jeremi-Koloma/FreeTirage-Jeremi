@@ -24,6 +24,6 @@ public interface ServiceShortList {
     List <ShortList> lireP(Long libelle);
 
     //Nombre postulants;
-    List<Object> nbrePost(Long nbrPos);
+    List<Object> nbrePost();
 
 }

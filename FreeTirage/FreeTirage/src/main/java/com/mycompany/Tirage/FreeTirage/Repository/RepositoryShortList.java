@@ -22,7 +22,7 @@ public interface RepositoryShortList extends JpaRepository<ShortList, Long> {
     public List<ShortList> lirePostulant(Long lib);
 
     // Conter le nombre de personnes;
-    @Query(value = "SELECT COUNT(id_triage) FROM `shortlist` WHERE shortlist.id_triage=:nbrPostulant", nativeQuery = true)
-    List<Object> nombrePost(Long nbrPostulant);
+    @Query(value = "SELECT COUNT(*) FROM shortlist,tirage WHERE shortlist.id_triage=tirage.id_tirage GROUP BY id_triage;", nativeQuery = true)
+    List<Object> nombrePost();
 
 }
