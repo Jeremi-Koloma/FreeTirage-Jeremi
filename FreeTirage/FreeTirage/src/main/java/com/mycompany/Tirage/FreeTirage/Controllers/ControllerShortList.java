@@ -34,4 +34,9 @@ public class ControllerShortList {
         return serviceShortList.lireP(n);
     }
 
+    // Nombre des postulants;
+    @GetMapping("/numberPost/{nbrPostulant}")
+    public  List<Object> numberPost(@PathVariable long nbrPostulant){
+        return serviceShortList.nbrePost(nbrPostulant);
+    }
 }

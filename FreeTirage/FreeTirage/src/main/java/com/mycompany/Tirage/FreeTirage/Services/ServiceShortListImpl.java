@@ -51,5 +51,10 @@ public class ServiceShortListImpl implements ServiceShortList {
         return repositoryShortList.lirePostulant(libelle);
     }
 
+    @Override
+    public List<Object> nbrePost(Long nbrPos) {
+        return repositoryShortList.nombrePost(nbrPos);
+    }
+
 
 }
